@@ -3,7 +3,10 @@ import {
   Routes,
   Route,
   BrowserRouter as Router,
+  useLocation,
   NavLink,
+  Link,
+  Outlet,
 } from 'react-router-dom';
 const routes = [
   {
@@ -19,19 +22,19 @@ const routes = [
   {
     id: 3,
     name: 'contact',
-    url: '/',
+    url: '/contact',
   },
 ];
 const header = () => {
   return (
     <header className=' w-full h-20 bg-sky-700'>
-      <nav>
-        {routes.map(({ id, name, url }) => (
-          <NavLink key={id} to={url}>
-            {name}
-          </NavLink>
-        ))}
-      </nav>
+      <ul>
+        <li>
+          {routes.map(({ id, name, url }) => (
+            <NavLink to={'/about'}>About</NavLink>
+          ))}
+        </li>
+      </ul>
     </header>
   );
 };
