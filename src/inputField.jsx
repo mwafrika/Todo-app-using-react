@@ -25,7 +25,10 @@ const InputField = ({ addTodoItem }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className='flex mx-auto justify-between w-4/5 rounded-full'
+    >
       <input
         type='text'
         placeholder='Add your todo...'
@@ -33,8 +36,13 @@ const InputField = ({ addTodoItem }) => {
         name='title'
         required
         onChange={(e) => handleChangeInput(e)}
+        className='h-full bg-orange-400 w-full py-4 rounded-l-full px-4 outline-none'
       />
-      <input type='submit' value='Add todo' />
+      <input
+        type='submit'
+        value='Add todo'
+        className='rounded-r-full bg-green-600 px-4 cursor-pointer'
+      />
     </form>
   );
 };

@@ -52,7 +52,7 @@ function App() {
       [prevState[1].name]: e.target.value,
     }));
   };
- 
+
   const addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),
@@ -78,19 +78,23 @@ function App() {
   };
 
   return (
-    <div className='title'>
-      <InputField
-        addTodoItem={addTodoItem}
-        handleChangeInput={handleChangeInput}
-        todo={title}
-      />
-      <Todo
-        todos={todos}
-        handleChange={handleChange}
-        handleDelete={handleDelete}
-        setUpdate={setUpdate}
-      />
-    </div>
+    <main className='flex items-center justify-center h-screen'>
+      <section className='bg-slate-500 w-1/2 h-4/5 justify-center items-center flex flex-col gap-y-5 py-10'>
+        <InputField
+          addTodoItem={addTodoItem}
+          handleChangeInput={handleChangeInput}
+          todo={title}
+          className=''
+        />
+        <Todo
+          todos={todos}
+          handleChange={handleChange}
+          handleDelete={handleDelete}
+          setUpdate={setUpdate}
+          className=''
+        />
+      </section>
+    </main>
   );
 }
 

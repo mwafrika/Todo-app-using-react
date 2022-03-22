@@ -27,20 +27,33 @@ const Todos = ({ todos, handleChange, handleDelete, setUpdate }) => {
   editing ? (viewMode.display = 'none') : (editMode.display = 'none');
 
   return (
-    <ul>
+    <ul className='flex w-4/5 h-full flex-col mx-auto gap-y-5'>
       {console.log(todos, 'check again')}
       {todos.map((todo) => (
-        <li key={todo.id}>
-          <div onDoubleClick={handleEdit} style={viewMode}>
+        <li
+          key={todo.id}
+          className='h-14 even:bg-green-500 odd:bg-red-500 flex rounded-lg'
+        >
+          <div
+            onDoubleClick={handleEdit}
+            style={viewMode}
+            className='flex justify-between items-center w-full pl-4'
+          >
             <input
               type='checkbox'
               checked={todo.completed}
               onChange={() => handleChange(todo.id)}
             />
-            <button onClick={() => handleDelete(todo.id)}>Delete</button>
+
             <span style={todo.completed ? completedStyle : null}>
               {todo.title}
             </span>
+            <button
+              onClick={() => handleDelete(todo.id)}
+              className='bg-yellow-500 h-full text-white rounded-lg px-4'
+            >
+              Delete
+            </button>
           </div>
           <input
             type='text'
