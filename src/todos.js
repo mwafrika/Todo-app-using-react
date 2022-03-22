@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const todos = ({ todos, handleChange, handleDelete, setUpdate }) => {
+const Todos = ({ todos, handleChange, handleDelete, setUpdate }) => {
   console.log('check todos number', todos);
   const [editing, setEditing] = useState(false);
   const completedStyle = {
@@ -56,4 +56,4 @@ const todos = ({ todos, handleChange, handleDelete, setUpdate }) => {
   );
 };
 
-export default todos;
+export default Todos;

@@ -52,7 +52,7 @@ function App() {
       [prevState[1].name]: e.target.value,
     }));
   };
-
+ 
   const addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),
