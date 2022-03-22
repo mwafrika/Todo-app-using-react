@@ -1,13 +1,6 @@
 import React from 'react';
-import {
-  Routes,
-  Route,
-  BrowserRouter as Router,
-  useLocation,
-  NavLink,
-  Link,
-  Outlet,
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 const routes = [
   {
     id: 1,
@@ -25,21 +18,19 @@ const routes = [
     url: '/contact',
   },
 ];
-const header = () => {
-  return (
-    <header className='w-full h-20 bg-sky-700 flex justify-between items-center px-5'>
-      <span className='text-2xl text-white'>Logo</span>
-      <ul>
-        <li className='flex  gap-x-4 text-white'>
-          {routes.map(({ id, name, url }) => (
-            <NavLink to={url} key={id}>
-              {name}
-            </NavLink>
-          ))}
-        </li>
-      </ul>
-    </header>
-  );
-};
+const header = () => (
+  <header className="w-full h-20 bg-sky-700 flex justify-between items-center px-5">
+    <span className="text-2xl text-white">Logo</span>
+    <ul>
+      <li className="flex  gap-x-4 text-white">
+        {routes.map(({ id, name, url }) => (
+          <NavLink to={url} key={id}>
+            {name}
+          </NavLink>
+        ))}
+      </li>
+    </ul>
+  </header>
+);
 
 export default header;

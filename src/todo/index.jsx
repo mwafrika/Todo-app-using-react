@@ -1,11 +1,11 @@
-import React from 'react';
+/* eslint-disable jsx-quotes */
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import { v4 as uuidv4 } from 'uuid';
 import Todo from './todos';
-import { useState } from 'react';
 import InputField from './inputField';
 import Header from './header';
-import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const getInitialTodos = () => {
@@ -58,7 +58,7 @@ function App() {
   const addTodoItem = (title) => {
     const newTodo = {
       id: uuidv4(),
-      title: title,
+      title,
       completed: false,
     };
     setTodos([...todos, newTodo]);
@@ -88,14 +88,12 @@ function App() {
           addTodoItem={addTodoItem}
           handleChangeInput={handleChangeInput}
           todo={title}
-          className=''
         />
         <Todo
           todos={todos}
           handleChange={handleChange}
           handleDelete={handleDelete}
           setUpdate={setUpdate}
-          className=''
         />
       </section>
     </main>
