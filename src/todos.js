@@ -5,8 +5,8 @@ const Todos = ({ todos, handleChange, handleDelete, setUpdate }) => {
   const [editing, setEditing] = useState(false);
   const completedStyle = {
     fontStyle: 'italic',
-    color: '#595959',
-    opacity: 0.4,
+    color: '#cdcdcd',
+    opacity: 1,
     textDecoration: 'line-through',
   };
 
@@ -32,7 +32,7 @@ const Todos = ({ todos, handleChange, handleDelete, setUpdate }) => {
       {todos.map((todo) => (
         <li
           key={todo.id}
-          className='h-14 even:bg-green-500 odd:bg-red-500 flex rounded-lg'
+          className='h-14 even:bg-green-500 odd:bg-white  text-xl italic font-bold even:text-white odd:text-slate-400 flex rounded-lg'
         >
           <div
             onDoubleClick={handleEdit}
@@ -45,7 +45,7 @@ const Todos = ({ todos, handleChange, handleDelete, setUpdate }) => {
               onChange={() => handleChange(todo.id)}
             />
 
-            <span style={todo.completed ? completedStyle : null}>
+            <span className='' style={todo.completed ? completedStyle : null}>
               {todo.title}
             </span>
             <button

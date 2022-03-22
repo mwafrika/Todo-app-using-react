@@ -3,6 +3,7 @@ import './App.css';
 import Todo from './todos';
 import { useState } from 'react';
 import InputField from './inputField';
+import Header from './header';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
@@ -78,8 +79,10 @@ function App() {
   };
 
   return (
-    <main className='flex items-center justify-center h-screen'>
-      <section className='bg-slate-500 w-1/2 h-4/5 justify-center items-center flex flex-col gap-y-5 py-10'>
+    <main className='flex items-center justify-center  flex-col p-0 m-0 gap-4'>
+      <Header />
+      <section className='bg-sky-700 w-1/2 h-4/5 justify-center items-center flex flex-col gap-y-5 py-10 rounded-lg'>
+        <h1 className='text-3xl text-white'>Add your todo with confidence</h1>
         <InputField
           addTodoItem={addTodoItem}
           handleChangeInput={handleChangeInput}
