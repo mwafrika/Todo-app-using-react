@@ -1,7 +1,12 @@
 import React from 'react';
-
+import Header from '../todo/header';
 const contact = () => {
-  return <div>About</div>;
+  return (
+    <div>
+      <Header />
+      Contact
+    </div>
+  );
 };
 
 export default contact;

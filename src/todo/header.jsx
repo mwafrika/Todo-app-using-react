@@ -27,11 +27,14 @@ const routes = [
 ];
 const header = () => {
   return (
-    <header className=' w-full h-20 bg-sky-700'>
+    <header className='w-full h-20 bg-sky-700 flex justify-between items-center px-5'>
+      <span className='text-2xl text-white'>Logo</span>
       <ul>
-        <li>
+        <li className='flex  gap-x-4 text-white'>
           {routes.map(({ id, name, url }) => (
-            <NavLink to={'/about'}>About</NavLink>
+            <NavLink to={url} key={id}>
+              {name}
+            </NavLink>
           ))}
         </li>
       </ul>
